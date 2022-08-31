@@ -11,6 +11,7 @@ import {
   Put,
   Patch,
   Param,
+  HttpStatus
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserEntity } from './dtos/create-users.dto';
@@ -33,7 +34,7 @@ export class UsersController {
   @Post('/create')
   async createUser(@Body() body: CreateUserEntity, @Res() res: Response) {
     const response = await this.userService.createUser(body);
-    return res.json(response);
+    return res.status(!response.erro ? 200 : HttpStatus.CONFLICT).json(response);
   }
 
   @UseGuards(AuthGuard('local'))

@@ -24,7 +24,7 @@ export class UsersService implements UsersRespository {
     // private readonly authService: AuthService
   ) {}
 
-  async createUser(body: CreateUserEntity): Promise<ResponseBody> {
+  async createUser(body: CreateUserEntity): Promise<any> {
     try {
       const transaction = createTransaction();
       const momentTransaction = new Date();
@@ -44,10 +44,6 @@ export class UsersService implements UsersRespository {
         verifyCode,
       );
       return {
-        transacao: {
-          co_transacao_local: transaction,
-          dt_transacao_local: momentTransaction,
-        },
         mensagem: 'E-mail cadastrado com sucesso. Verifique seu email!',
       };
     } catch (error: any) {
@@ -67,7 +63,7 @@ export class UsersService implements UsersRespository {
     }
   }
 
-  async validateUser(email: string, verifyCode: string): Promise<ResponseBody> {
+  async validateUser(email: string, verifyCode: string): Promise<any> {
     try {
       const transaction = createTransaction();
       const momentTransaction = new Date();
@@ -91,18 +87,14 @@ export class UsersService implements UsersRespository {
       });
 
       return {
-        transacao: {
-          co_transacao_local: transaction,
-          dt_transacao_local: momentTransaction,
-        },
-        erro: 'Email foi verificado com sucesso',
+        mensagem: 'Email foi verificado com sucesso',
       };
     } catch (error: any) {
       throw error;
     }
   }
 
-  async resentVerifyCode(email: string): Promise<ResponseBody> {
+  async resentVerifyCode(email: string): Promise<any> {
     try {
       const transaction = createTransaction();
       const momentTransaction = new Date();
@@ -129,10 +121,6 @@ export class UsersService implements UsersRespository {
       await this.mailService.sendMailWithConfirmationCode(email, verifyCode);
 
       return {
-        transacao: {
-          co_transacao_local: transaction,
-          dt_transacao_local: momentTransaction,
-        },
         mensagem: 'Novo código de verificação foi enviado para seu email',
       };
     } catch (error: any) {
@@ -140,7 +128,7 @@ export class UsersService implements UsersRespository {
     }
   }
 
-  async resetPassword(email: string): Promise<ResponseBody> {
+  async resetPassword(email: string): Promise<any> {
     try {
       const transaction = createTransaction();
       const momentTransaction = new Date();
@@ -171,10 +159,6 @@ export class UsersService implements UsersRespository {
       );
 
       return {
-        transacao: {
-          co_transacao_local: transaction,
-          dt_transacao_local: momentTransaction,
-        },
         mensagem: 'Link de recuperação de senha enviada para seu email',
       };
     } catch (error: any) {

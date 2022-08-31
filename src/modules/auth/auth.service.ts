@@ -27,8 +27,15 @@ export class AuthService {
       delete user.password;
       const payload = { email: user.email, username: user.name, id: user.id };
       const access_token = this.jwtService.sign(payload);
+      
+      const {
+        resetePasswordToken,
+        resetePasswordTokenExpireIn,
+        verifyCode,
+        verifyCodeExpireIn, document, ...rest
+      } = user
       //@ts-ignore
-      return { ...user, access_token: access_token };
+      return { ...rest,  access_token: access_token };
     }
   }
 

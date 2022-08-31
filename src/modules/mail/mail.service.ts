@@ -51,7 +51,7 @@ export class MailService implements MailRepositoy {
           from: 'noreply@nestjs.com', // sender address
           subject: 'Link de recuperação de senha ✔', // Subject line
           text: `seu link de recuperação de senha é: link/${resetePasswordToken}`, // plaintext body
-          html: `<p>seu link de recuperação de senha é: <a>link/${resetePasswordToken}</a></p>`, // HTML body content
+          html: `<p>seu link de recuperação de senha é: <a>http://127.0.0.1:5173/troca-de-senha/${resetePasswordToken}</a></p>`, // HTML body content
         })
         .then((values) => {
           this.logger.log(
