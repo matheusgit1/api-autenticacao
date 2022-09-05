@@ -245,4 +245,13 @@ export class UsersService implements UsersRespository {
       throw error;
     }
   }
+
+  public async getProfile(jwt: string){
+    const user = await this.jwtService.verifyAsync(jwt.split(' ')[1], {
+      secret: process.env.JWT_SECRET,
+    });
+
+    const userProfile = await this.ormService.getUserProfile(user.id)
+    return userProfile
+  }
 }

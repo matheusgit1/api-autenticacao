@@ -99,7 +99,8 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @Get('/profile')
-  getProfile(@ReqNest() req) {
-    return req.user;
+  async getProfile(@Req() req: Request) {
+    const profile = await this.userService.getProfile(req.headers.authorization)
+    return profile
   }
 }
