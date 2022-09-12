@@ -12,7 +12,7 @@ import { VerifyAcountException } from '../../infrastructure/exceptions/verify-ac
 import { UnauthorizedException } from '../../infrastructure/exceptions/unauthorized-exception';
 import { ORMService } from '../../infrastructure/orm/orm.service';
 import * as bcript from 'bcrypt';
-import { AuthService } from '../auth/auth.service'
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class UsersService implements UsersRespository {
@@ -21,8 +21,8 @@ export class UsersService implements UsersRespository {
     private readonly mailService: MailService,
     private jwtService: JwtService,
     private readonly ormService: ORMService,
-    // private readonly authService: AuthService
-  ) {}
+  ) // private readonly authService: AuthService
+  {}
 
   async createUser(body: CreateUserEntity): Promise<any> {
     try {
@@ -246,12 +246,12 @@ export class UsersService implements UsersRespository {
     }
   }
 
-  public async getProfile(jwt: string){
+  public async getProfile(jwt: string) {
     const user = await this.jwtService.verifyAsync(jwt.split(' ')[1], {
       secret: process.env.JWT_SECRET,
     });
 
-    const userProfile = await this.ormService.getUserProfile(user.id)
-    return userProfile
+    const userProfile = await this.ormService.getUserProfile(user.id);
+    return userProfile;
   }
 }

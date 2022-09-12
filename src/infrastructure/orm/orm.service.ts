@@ -37,7 +37,7 @@ export class ORMService implements ORMRepository {
   }
 
   public async getUserProfile(userId): Promise<UsersEntity> {
-    const profile = await this.ormService.findOne({ where: { id: userId } })
-    return profile
+    const profile = await this.ormService.findOne({ where: { id: userId } });
+    return profile;
   }
 }

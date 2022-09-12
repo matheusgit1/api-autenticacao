@@ -11,7 +11,7 @@ import {
   Put,
   Patch,
   Param,
-  HttpStatus
+  HttpStatus,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserEntity } from './dtos/create-users.dto';
@@ -34,7 +34,9 @@ export class UsersController {
   @Post('/create')
   async createUser(@Body() body: CreateUserEntity, @Res() res: Response) {
     const response = await this.userService.createUser(body);
-    return res.status(!response.erro ? 200 : HttpStatus.CONFLICT).json(response);
+    return res
+      .status(!response.erro ? 200 : HttpStatus.CONFLICT)
+      .json(response);
   }
 
   @UseGuards(AuthGuard('local'))
@@ -100,7 +102,9 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @Get('/profile')
   async getProfile(@Req() req: Request) {
-    const profile = await this.userService.getProfile(req.headers.authorization)
-    return profile
+    const profile = await this.userService.getProfile(
+      req.headers.authorization,
+    );
+    return profile;
   }
 }

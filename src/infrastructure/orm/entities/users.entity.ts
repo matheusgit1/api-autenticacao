@@ -24,19 +24,23 @@ export class UsersEntity {
   @Column('varchar', { name: 'co_phone', nullable: false })
   phone: string;
 
-  @Column('varchar', { name: 'co_document', nullable: false , select: false})
+  @Column('varchar', { name: 'co_document', nullable: false, select: false })
   document: string;
 
   @Column('varchar', { name: 'co_password', nullable: false })
   password: string;
 
-  @Column('varchar', { name: 'co_resete_password_token', nullable: true, select: false})
+  @Column('varchar', {
+    name: 'co_resete_password_token',
+    nullable: true,
+    select: false,
+  })
   resetePasswordToken?: string;
 
   @Column('timestamp', {
     name: 'co_resete_password_token_expire',
     nullable: true,
-    select: false
+    select: false,
   })
   resetePasswordTokenExpireIn?: Date;
 
@@ -49,14 +53,19 @@ export class UsersEntity {
   @Column({ name: 'co_is_verified', nullable: true, default: false })
   isVerified?: boolean;
 
-  @Column({ name: 'co_verify_code', nullable: true, default: null , select: false})
+  @Column({
+    name: 'co_verify_code',
+    nullable: true,
+    default: null,
+    select: false,
+  })
   verifyCode?: string;
 
   @Column({
     name: 'co_verify_code_expire_in',
     nullable: true,
     default: new Date(new Date().setHours(new Date().getHours() + 1)),
-    select: false
+    select: false,
   })
   verifyCodeExpireIn?: Date;
 
