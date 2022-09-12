@@ -20,9 +20,8 @@ export class UsersService implements UsersRespository {
   constructor(
     private readonly mailService: MailService,
     private jwtService: JwtService,
-    private readonly ormService: ORMService,
-  ) // private readonly authService: AuthService
-  {}
+    private readonly ormService: ORMService, // private readonly authService: AuthService
+  ) {}
 
   async createUser(body: CreateUserEntity): Promise<any> {
     try {

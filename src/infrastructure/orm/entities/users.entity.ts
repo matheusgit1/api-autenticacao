@@ -24,7 +24,12 @@ export class UsersEntity {
   @Column('varchar', { name: 'co_phone', nullable: false })
   phone: string;
 
-  @Column('varchar', { name: 'co_document', nullable: false, select: false })
+  @Column('varchar', {
+    name: 'co_document',
+    nullable: false,
+    select: false,
+    unique: true,
+  })
   document: string;
 
   @Column('varchar', { name: 'co_password', nullable: false })

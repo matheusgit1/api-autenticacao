@@ -10,7 +10,7 @@ import { AuthStrategy } from './auth.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from '../../infrastructure/jwt/jwt.strategy';
 import { ServiceMiddleware } from '../../infrastructure/middleware/service.middleware';
-import { JwtService } from '@nestjs/jwt';
+// import { JwtService } from '@nestjs/jwt';
 
 @Module({
   imports: [
