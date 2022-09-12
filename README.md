@@ -6,68 +6,117 @@
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+   
+   
+# API-AUTENTICACAO
 
-## Description
+## Sobre este projeto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este projeto tem por principal objetivo o desenvolvimento de uma api de autenticação que será consumida pelo front-emd commerce suite, disponivel em: https://github.com/matheusgit1/commerce-suit
 
-## Installation
+
+## Autores
+
+- [Matheus Alves Pereira](https://www.linkedin.com/in/matheus-alves-pereira-4b3781222/)
+
+## Stack utilizada
+
+
+**Back-end:**
+Node,
+Express,
+nestjs,
+typescript,
+javascrip,
+aws,
+Sql,
+banco de dados postgress
+
+**Ferramentas de teste:**
+jest, postman
+
+
+
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
+
+no diretorio raíz copie e cole as chaves do arquivo ".env.example" em seu ".env" com os valores adequados
+
+- exemplo
+PORT = 3000
+
+
+
+## Rodando localmente
+
+### requisitos
+
+nodejs na versao 15.x ou superior
+
+pode ser baixado aqui: https://nodejs.org/pt-br/download/
+
+verifique se o node foi instalado corretamente com o seguinte comendo no cmd ou powerShell
 
 ```bash
-$ npm install
+  node --version
 ```
+#### em caso de comando não reconheciod, reinicie seu computador
 
-## Running the app
+#### baixe o aplicativo "expo" na playstore ou apple store.
+
+
+####  (opcional) instale o yarn para o usar a cli do yarn
+no seu cmd ou powerShell use o comando
+
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+  npm install yarn --global
 ```
-
-## Test
+verifique se o yarn foi instalado corretamente com o seguinte comendo no cmd ou powerShell
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  yarn --version
 ```
 
-## Support
+Clone o projeto com o  seguinto comando no cmd, powerShell, wsl ou qualquer gerenciador
+de sub sistemas de sua preferência
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+```bash
+  git clone https://github.com/matheusgit1/commerce-suit.git
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Entre no diretório do projeto
 
-## License
+```bash
+  cd api-autenticacao
+```
 
-Nest is [MIT licensed](LICENSE).
+Instale as dependências
+
+```bash
+  yarn install
+```
+
+ou
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  yarn start:dev
+```
+ou
+
+```bash
+  npm run yarn start:dev
+```
+
+## Condições iniciais
+
+#### para o funcionamento adequado é necessario que suas variaveis de ambientes estejam corretas
