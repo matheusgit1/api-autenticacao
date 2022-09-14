@@ -1,0 +1,910 @@
+{
+	"info": {
+		"_postman_id": "b1c967e2-eed2-43a6-bea3-fed23e484bca",
+		"name": "autenticação",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17845763"
+	},
+	"item": [
+		{
+			"name": "create-user (ok)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"joicealves@commercesuit.com\",\r\n    \"name\": \"Joice Alves\",\r\n    \"document\": \"67274445014\",\r\n    \"phone\": \"61979496711\",\r\n    \"password\": \"Pv81=***\",\r\n    \"confirmPassword\": \"Pv81=***\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/create",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pereira2.matheusalves@gmail.com.br\",\r\n    \"name\": \"matheus\",\r\n    \"document\": \"16378436746\",\r\n    \"phone\": \"27997822665\",\r\n    \"password\": \"Pv81=***\",\r\n    \"confirmPassword\": \"Pv81=***\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "162"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a2-p19AMwjHf1yE8DNDs9MNHkcjL6I\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Aug 2022 15:34:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"2LG5LNMJKQ5R716S7-AA7G769R72L47\",\n        \"dt_transacao_local\": \"2022-08-06T15:34:42.591Z\"\n    },\n    \"mensagem\": \"E-mail cadastrado com sucesso!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login (ok)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pereira.matheusalves@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/login",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pereira.matheusalves@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Pv81=***",
+									"type": "text"
+								},
+								{
+									"key": "sadfasdf",
+									"value": "asdadfad",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "170"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aa-3Rp2tioNWp2GnxhjxsMpoS4ZbEU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 17:53:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"GCE4MORE51SC98PI49FB7DIO8F7DH44\",\n        \"dt_transacao_local\": \"2022-08-07T17:53:07.527Z\"\n    },\n    \"erro\": \"E-mail ainda não verificado. verifique-o!\"\n}"
+				},
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pereira2.matheusalves@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "sadfasdf",
+									"value": "asdadfad",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "668"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29c-OO8fS9Ps8vi0Hbs92n+VzhimGkA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Aug 2022 00:23:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7d15a6fb-69df-4af8-ac29-5b75ab634d88\",\n    \"name\": \"matheus\",\n    \"email\": \"pereira2.matheusalves@gmail.com\",\n    \"phone\": \"27997822665\",\n    \"document\": \"16378436746\",\n    \"resetePasswordToken\": null,\n    \"resetePasswordTokenExpireIn\": null,\n    \"createdAt\": \"2022-08-10T14:47:45.557Z\",\n    \"updatedAt\": \"2022-08-10T14:48:37.233Z\",\n    \"isVerified\": true,\n    \"verifyCode\": \"871957\",\n    \"verifyCodeExpireIn\": \"2022-08-10T18:47:25.986Z\",\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjdkMTVhNmZiLTY5ZGYtNGFmOC1hYzI5LTViNzVhYjYzNGQ4OCIsImlhdCI6MTY2MDE3NzQxMiwiZXhwIjoxNjYwNzgyMjEyfQ.NodxDhXLsyHV0NFO7DEaxDa4wmHdCVtTF3ustHoVUTM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "verify acount (ok)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pereira2.matheusalves@gmail.com\",\r\n    \"verifyCode\":\"871957\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/validate",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"validate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "verify acount",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pereira.matheusalves@gmail.com\",\r\n    \"verifyCode\":\"832860\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"validate"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-rW69lQFVqx7Ix9/FXT1jXYu/+9A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 20:51:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"MB-KEFL9HR5ECDJ6HBD256QQ8B4A74S\",\n        \"dt_transacao_local\": \"2022-08-07T20:51:58.041Z\"\n    },\n    \"erro\": \"Essa conta já foi verificada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "proflle (JWT)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/profile",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "proflle",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdGhldXMiLCJzdWIiOiIyMDI5NDQwNC02OWU4LTRhOGQtYmViNy05YWJmYjM4ZGM2NDQiLCJpYXQiOjE2NTk4MTg4MTQsImV4cCI6MTY2MDQyMzYxNH0.tWcPcFJUAkBmKFRZh1IlfiM_2q0y0yWDwELa59YOKgE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-XaLbzQb2U6Ri79bqTRP7EQ0txQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 22:13:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": \"20294404-69e8-4a8d-beb7-9abfb38dc644\",\n    \"username\": \"matheus\"\n}"
+				}
+			]
+		},
+		{
+			"name": "resent verify code (ok)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pereira4.matheusalves@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/validate/resent-verify-code",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"validate",
+						"resent-verify-code"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "resent verify code",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pereira.matheusalves@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/validate/resent-verify-code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"validate",
+								"resent-verify-code"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bb-ULEPFuRPk2Yr7kPr5zA/u/8BJ1w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 21:53:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"GSAOLSA-RBC3HQ97C-Q4KMSB273B1R\",\n        \"dt_transacao_local\": \"2022-08-07T21:53:15.714Z\"\n    },\n    \"mensagem\": \"Novo código de verificação foi enviado para seu email\"\n}"
+				}
+			]
+		},
+		{
+			"name": "reset password (ok)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pereira4.matheusalves@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/resete-password",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"resete-password"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "pereira.matheusalves@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "reset password",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pereira.matheusalves@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pereira.matheusalves@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b8-F7J24eiN3VYK+AjeAdNFh3ZwEuU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 22:19:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"R442IRBHN6K89S9LJPKR96S11D5J-4\",\n        \"dt_transacao_local\": \"2022-08-07T22:19:21.462Z\"\n    },\n    \"mensagem\": \"Link de recuperação de senha enviada para seu email\"\n}"
+				}
+			]
+		},
+		{
+			"name": "change password(without login) (ok) (JWT)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pereira4.matheusalves@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL_API_AUTENTICACAO}}/auth/users/resete-password/sZRYNc0hHKmTR6NUdzmG",
+					"host": [
+						"{{URL_API_AUTENTICACAO}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"resete-password",
+						"sZRYNc0hHKmTR6NUdzmG"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change password(without login)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pereira.matheusalves@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/reset-password/dqZfhM16IxCzUPqd1hSr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"reset-password",
+								"dqZfhM16IxCzUPqd1hSr"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-TxX+ahTZJy18eP29QNqc0aF4ISc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Aug 2022 23:03:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"POS5D17ECEK8RLDECLJKGJK85MB4MN\",\n        \"dt_transacao_local\": \"2022-08-07T23:03:40.348Z\"\n    },\n    \"mensagem\": \"Senha alterada com sucesso\"\n}"
+				}
+			]
+		},
+		{
+			"name": "change password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/auth/users/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"users",
+						"change-password"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change password",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlcmVpcmEyLm1hdGhldXNhbHZlc0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Im1hdGhldXMiLCJpZCI6IjJiNjc4Y2YwLWFiOTctNDQ4My04NTc0LTM0MTJjYzAyMDA2OSIsImlhdCI6MTY1OTk2Nzk2MywiZXhwIjoxNjYwNTcyNzYzfQ.ZtRcpcBWy4wijvcdRgWzRqGXnSl3pBRBzrT6Ld-oWQ8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "307"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"133-TzzvdMV+lgEPXmarVTppj+vfBuw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Aug 2022 14:35:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transacao\": {\n        \"co_transacao_local\": \"O49QCCLGC29E1H4J8GQHMP3M72I63S\",\n        \"dt_transacao_local\": \"2022-08-08T14:35:12.775Z\"\n    },\n    \"dado\": {\n        \"email\": \"pereira2.matheusalves@gmail.com\",\n        \"username\": \"matheus\",\n        \"id\": \"2b678cf0-ab97-4483-8574-3412cc020069\",\n        \"iat\": 1659967963,\n        \"exp\": 1660572763\n    },\n    \"mensagem\": \"Senha alterada com sucesso\"\n}"
+				}
+			]
+		}
+	]
+}
